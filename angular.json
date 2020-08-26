@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demoOnlineTest": {
+    "firstAngularProject": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demoOnlineTest",
+            "outputPath": "dist/firstAngularProject",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -62,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "demoOnlineTest:build"
+            "browserTarget": "firstAngularProject:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "demoOnlineTest:build:production"
+              "browserTarget": "firstAngularProject:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demoOnlineTest:build"
+            "browserTarget": "firstAngularProject:build"
           }
         },
         "test": {
@@ -110,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "demoOnlineTest:serve"
+            "devServerTarget": "firstAngularProject:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "demoOnlineTest:serve:production"
+              "devServerTarget": "firstAngularProject:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "demoOnlineTest"
+  "defaultProject": "firstAngularProject"
 }
