@@ -5,22 +5,22 @@
 	<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
 
 	   <div class="custom-control custom-radio">
-	      <input id="1" type="radio" class="custom-control-input" value="1" name="gender" ngModel>
-	      <label class="custom-control-label" for="1">{{allQuestions[testId-1].op1}}</label>
+	      <input id="1" type="radio" class="custom-control-input" value="1" name="gender" [ngModel]="allQuestions[testId-1].op1" >
+	      <label class="custom-control-label" for="1" >{{allQuestions[testId-1].op1}}</label>
 	   </div>
 
 	   <div class="custom-control custom-radio">
-	      <input id="2" type="radio" class="custom-control-input" value="2" name="gender" ngModel>
+	      <input id="2" type="radio" class="custom-control-input" value="2" name="gender" [ngModel]="allQuestions[testId-1].op2">
 	      <label class="custom-control-label" for="2">{{allQuestions[testId-1].op2}}</label>
 	   </div>
 
 	    <div class="custom-control custom-radio">
-	      <input id="3" type="radio" class="custom-control-input" value="3" name="gender" ngModel>
+	      <input id="3" type="radio" class="custom-control-input" value="3" name="gender" [ngModel]="allQuestions[testId-1].op3">
 	      <label class="custom-control-label" for="3">{{allQuestions[testId-1].op3}}</label>
 	   </div>
 
 		<div class="custom-control custom-radio">
-		  <input id="4" type="radio" class="custom-control-input" value="4" name="gender" ngModel>
+		  <input id="4" type="radio" class="custom-control-input" value="4" name="gender" [ngModel]="allQuestions[testId-1].op4">
 		  <label class="custom-control-label" for="4">{{allQuestions[testId-1].op4}}</label>
 	   </div>
 
