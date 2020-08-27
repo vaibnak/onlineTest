@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { StartComponent } from './start/start.component';
 import { TestpageComponent } from './testpage/testpage.component';
 import { RegisterComponent } from './register/register.component';
+import { SampleComponentComponent } from './sample-component/sample-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     StartComponent,
     TestpageComponent,
-    RegisterComponent
+    RegisterComponent,
+    SampleComponentComponent
   ],
   imports: [
     BrowserModule,
