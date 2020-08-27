@@ -1,0 +1,13 @@
+<form [formGroup] ="loginForm">
+	<input type="text" name="userName" formControlName="userName">
+
+	<div *ngIf="loginForm.get('userName').errors?.required && (loginForm.get('userName').touched) || !loginForm.get('userName').Pristine">
+		username is required
+	</div>
+
+
+	<input type="text" name="password" formControlName="password">
+	<input type="text" name="age" formControlName="age">
+
+	<input type="submit" name="" value="submit"/>
+</form>

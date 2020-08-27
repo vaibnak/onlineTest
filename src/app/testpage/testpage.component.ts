@@ -14,6 +14,7 @@ export class TestpageComponent implements OnInit {
 	allQuestions:Questions[] = new Array();
 	showResult:boolean;
 	showQuestion:boolean;
+  check:boolean;
   constructor(public route:ActivatedRoute, private router:Router) {
   	console.log("constructor called");
   	this.testId = Number(this.route.snapshot.paramMap.get('testId'));
@@ -30,6 +31,7 @@ export class TestpageComponent implements OnInit {
   	this.totalScore = 0;
   	this.showResult = false;
   	this.showQuestion = true;
+    this.check = false;
    }
 
   ngOnInit(): void {
@@ -46,7 +48,7 @@ export class TestpageComponent implements OnInit {
 
   templateForm(value: any) {
   	let val:number;
-
+    this.check = false;
   	val = Number(value.gender);
   	console.log(val);
   	if(val == this.allQuestions[this.testId-1].ans){
@@ -61,6 +63,10 @@ export class TestpageComponent implements OnInit {
   	console.log(this.testId);
   	this.router.navigate(["/test",this.testId]);	
 
+  }
+
+  changeRaidioEventHandler(p1:string){
+    console.log(p1);
   }
 
 }
