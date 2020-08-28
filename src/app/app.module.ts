@@ -12,6 +12,7 @@ import { TestpageComponent } from './testpage/testpage.component';
 import { RegisterComponent } from './register/register.component';
 import { SampleComponentComponent } from './sample-component/sample-component.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { DirectiveExampleComponent } from './directive-example/directive-example.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     RegisterComponent,
     SampleComponentComponent,
     ReactiveformComponent,
+    DirectiveExampleComponent,
   ],
   imports: [
     BrowserModule,

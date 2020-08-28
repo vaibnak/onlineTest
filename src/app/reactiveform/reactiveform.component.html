@@ -1,7 +1,7 @@
 <form [formGroup] ="loginForm">
 	<input type="text" name="userName" formControlName="userName">
 
-	<div *ngIf="loginForm.get('userName').errors?.required && (loginForm.get('userName').touched) || !loginForm.get('userName').Pristine">
+	<div *ngIf="loginForm.get('userName').errors?.required && (loginForm.get('userName').touched || !loginForm.get('userName').pristine)">
 		username is required
 	</div>
 
