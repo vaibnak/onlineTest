@@ -1,2 +1,27 @@
-<h1>Click the Button below to start your test</h1>
-<input type="button" class="btn btn-primary" value="start" name="" (click)="startEventHandler()" [routerLink]="['/test',testId]"/>
+<div class="container-fluid">
+	<div class="row">
+		<div class="hd text-center">
+			<h2>Read the Below Instructions Carefully</h2>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="offset-md-3 instr">
+			<ul class="list-group">
+			  <li class="list-group-item">1. This test will consist of 15 Multiple choice question.</li>
+			  <li class="list-group-item">2. Each question will have 4 options out of which only one is correct</li>
+			  <li class="list-group-item">3. Clicking on next will submit your answers</li>
+			  <li class="list-group-item">4. Carefully submit your answer, as you can not get back to the same problem again after submitting the problem</li>
+			  <li class="list-group-item">5. Use of internt is prohibited</li>
+			</ul>
+			<div class="form-check mt-2">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label" for="exampleCheck1">I have read all the instructions carefully</label>
+			  </div>
+			  <button type="button" class="btn btn-success btn-lg btn-block startButton" value="start" name="" (click)="startEventHandler()" [routerLink]="['/test',testId]">Start</button> 
+		</div>
+	</div>
+</div>
+
+
+
+

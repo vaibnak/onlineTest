@@ -1,35 +1,54 @@
-<div *ngIf="showQuestion">
 
-	<p>{{allQuestions[testId-1].que}}</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="formContent col-6 offset-3">
+			<div *ngIf="showQuestion">
 
-	<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
 
-	   <div class="custom-control custom-radio">
-	      <input id="1" type="radio" class="custom-control-input" value="1" name="gender" ngModel>
-	      <label class="custom-control-label" for="1">{{allQuestions[testId-1].op1}}</label>
-	   </div>
+				<form #myForm="ngForm" (submit)="templateForm(myForm.value)" class="ml-2">
 
-	   <div class="custom-control custom-radio">
-	      <input id="2" type="radio" class="custom-control-input" value="2" name="gender" ngModel>
-	      <label class="custom-control-label" for="2">{{allQuestions[testId-1].op2}}</label>
-	   </div>
+					<p>{{allQuestions[testId-1].que}}</p>
+				<div class="form-check">
+				      <input id="1" type="radio" class="form-check-input" value="1" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='1'">
+				      <label class="form-check-label" for="1">{{allQuestions[testId-1].op1}}</label>
+				</div>
 
-	    <div class="custom-control custom-radio">
-	      <input id="3" type="radio" class="custom-control-input" value="3" name="gender" ngModel>
-	      <label class="custom-control-label" for="3">{{allQuestions[testId-1].op3}}</label>
-	   </div>
+				<div class="form-check">
+			            <input id="2" type="radio" class="form-check-input" value="2" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='2'">
+			      <label class="form-check-label" for="2">{{allQuestions[testId-1].op2}}</label>
+			      
+			  	</div>
 
-		<div class="custom-control custom-radio">
-		  <input id="4" type="radio" class="custom-control-input" value="4" name="gender" ngModel>
-		  <label class="custom-control-label" for="4">{{allQuestions[testId-1].op4}}</label>
-	   </div>
+			  	<div class="form-check">
+			            <input id="3" type="radio" class="form-check-input" value="3" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='3'">
+			      <label class="form-check-label" for="3">{{allQuestions[testId-1].op3}}</label>
+			      </div>
 
-	   <button type="submit" class="btn btn-primary">next</button>
-	</form>
+			      <div class="form-check">
+			            <input id="4" type="radio" class="form-check-input" value="4" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='4'">
+			      <label class="form-check-label" for="4">{{allQuestions[testId-1].op4}}</label>
+				   
+				  </div>
 
-</div>
+				</form>
 
-<div *ngIf="showResult">
-	<h1>Total Score</h1>
-	{{totalScore}}
+			</div>
+
+			<div *ngIf="showResult">
+				<h1>Total Score</h1>
+				{{totalScore}}
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row" >
+		<div class="col-12 text-center  mt-5">
+		  <button type="submit" class="btn btn-success" (click)="nextEventHandler()">Next</button>
+		  </div>
+	</div>
+
+	{{checkId}}
+	<!-- {{console.log(typeof(checkId))}} -->
+
 </div>

@@ -15,10 +15,6 @@
 }
 
 .cnt{
-	background-image: url('../../assets/cmp.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-  	background-size: cover;
 	height: 100%;
 	width: 100%;
 }
@@ -34,4 +30,8 @@
 
 .hd{
 	background-color: #3b3b3b;
+}
+
+.error{
+	text-decoration-color: red;
 }

@@ -15,6 +15,7 @@ export class TestpageComponent implements OnInit {
 	allQuestions:Questions[] = new Array();
 	showResult:boolean;
 	showQuestion:boolean;
+  checkId:string;
   manageQuestions:ManageQuestionsService;
 
   constructor(public route:ActivatedRoute, private router:Router, public manageQuestionsTmp:ManageQuestionsService) {
@@ -32,23 +33,27 @@ export class TestpageComponent implements OnInit {
   		
   }
 
-  templateForm(value: any) {
-  	let val:number;
-
-  	val = Number(value.gender);
-  	console.log(val);
-
+  nextEventHandler()
+  {
+    let val:number;
+    console.log(typeof(this.checkId));
+    val = Number(this.checkId);
+    console.log(val);
+    this.checkId = "0";
     this.manageQuestions.putUserAnswer(this.testId,val);
-  	this.testId++;
-  	if(this.testId>10){
-  		this.showResult = true;
-  		this.showQuestion = false;
+    this.testId++;
+    if(this.testId>10){
+      this.showResult = true;
+      this.showQuestion = false;
       this.totalScore = this.manageQuestions.getTotalMarks();
-  	}
+    }
 
-  	console.log(this.testId);
-  	this.router.navigate(["/test",this.testId]);	
+    console.log(this.testId);
+    this.router.navigate(["/test",this.testId]);  
 
+  }
+  templateForm(value: any) {
+  	
   }
 
 
