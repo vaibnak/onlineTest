@@ -49,10 +49,10 @@ export class TestpageComponent implements OnInit {
     this.manageQuestions.putUserAnswer(this.testId,val);
     this.testId++;
     this.optionSelected = false;
-    if(this.testId == 10){
+    if(this.testId == 15){
       this.finish = true;
     }
-    if(this.testId>10){
+    if(this.testId>15){
       this.showResult = true;
       this.showQuestion = false;
       this.totalScore = this.manageQuestions.getTotalMarks();
