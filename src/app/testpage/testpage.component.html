@@ -1,9 +1,10 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="formContent col-6 offset-3">
-			<div *ngIf="showQuestion">
-
+		<div *ngIf="showQuestion" class="col-1 qno justify-content-center bg-success d-flex align-items-center">
+			<h2 class="align-self-center">{{allQuestions[testId-1].qId}}</h2>
+		</div>
+		<div *ngIf="showQuestion" class="formContent col-6 offset-2">
 				<form #myForm="ngForm" (submit)="templateForm(myForm.value)" class="ml-2">
 
 					<p>{{allQuestions[testId-1].que}}</p>
@@ -30,14 +31,14 @@
 				  </div>
 
 				</form>
-
 			</div>
 
-			<div *ngIf="showResult">
-				<h1>Total Score</h1>
-				{{totalScore}}
-			</div>
-
+		<div *ngIf="showResult " class="formContent col-6 offset-2">
+			<h1>Total Score</h1>
+			{{totalScore}}/15
+			<p class="text-success">Correct Answers: {{correctAnswers}}</p>
+			<p class="text-danger">Wrong Answers: {{wrongAnswers}}</p>
+			<button type="submit" class="btn btn-success" routerLink="/login">Back</button>
 		</div>
 	</div>
 

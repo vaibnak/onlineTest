@@ -8,6 +8,8 @@ export class ManageQuestionsService {
 
 allQuestions:Questions[] = new Array();
 userAnswer = new Array();
+correctAnswer = new Array();
+wrongAnswer = new Array();
 
   constructor() {
 
@@ -40,10 +42,20 @@ userAnswer = new Array();
    		let marks = 0;
    		for(let i=0;i<this.allQuestions.length;i++){
    			if(this.allQuestions[i].ans == this.userAnswer[i].ans){
-   				marks++;
-   			}
+   				 this.correctAnswer.push(this.userAnswer[i].qId);
+           marks++;
+   			}else{
+           this.wrongAnswer.push(this.userAnswer[i].qId);
+         }
    		}
 
    		return marks;
+   }
+
+   getCorrectAnswer(){
+     return this.correctAnswer;
+   }
+   getWrongAnswer(){
+     return this.wrongAnswer;
    }
 }

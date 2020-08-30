@@ -19,6 +19,8 @@ export class TestpageComponent implements OnInit {
   finish:boolean;
   manageQuestions:ManageQuestionsService;
   optionSelected:boolean;
+  correctAnswers:number[];
+  wrongAnswers:number[];
 
   constructor(public route:ActivatedRoute, private router:Router, public manageQuestionsTmp:ManageQuestionsService) {
   	console.log("constructor called");
@@ -54,6 +56,8 @@ export class TestpageComponent implements OnInit {
       this.showResult = true;
       this.showQuestion = false;
       this.totalScore = this.manageQuestions.getTotalMarks();
+      this.correctAnswers = this.manageQuestions.getCorrectAnswer();
+      this.wrongAnswers = this.manageQuestions.getWrongAnswer();
     }
 
     console.log(this.testId);
