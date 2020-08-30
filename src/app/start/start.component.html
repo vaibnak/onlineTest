@@ -14,10 +14,10 @@
 			  <li class="list-group-item">5. Use of internt is prohibited</li>
 			</ul>
 			<div class="form-check mt-2">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1" (change)="checkEventHandler()" [(ngModel)]="agreeMentChecked"/>
 			    <label class="form-check-label" for="exampleCheck1">I have read all the instructions carefully</label>
 			  </div>
-			  <button type="button" class="btn btn-success btn-lg btn-block startButton" value="start" name="" (click)="startEventHandler()" [routerLink]="['/test',testId]">Start</button> 
+			  <button type="button" class="btn btn-success btn-lg btn-block startButton" value="start" name="" (click)="startEventHandler()" [routerLink]="['/test',testId]" [disabled]="!agreeMentChecked">Start</button> 
 		</div>
 	</div>
 </div>

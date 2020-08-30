@@ -4,28 +4,27 @@
 		<div class="formContent col-6 offset-3">
 			<div *ngIf="showQuestion">
 
-
 				<form #myForm="ngForm" (submit)="templateForm(myForm.value)" class="ml-2">
 
 					<p>{{allQuestions[testId-1].que}}</p>
 				<div class="form-check">
-				      <input id="1" type="radio" class="form-check-input" value="1" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='1'">
+				      <input id="1" type="radio" class="form-check-input" value="1" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='1'" [(ngModel)] = "optionSelected">
 				      <label class="form-check-label" for="1">{{allQuestions[testId-1].op1}}</label>
 				</div>
 
 				<div class="form-check">
-			            <input id="2" type="radio" class="form-check-input" value="2" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='2'">
+			            <input id="2" type="radio" class="form-check-input" value="2" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='2'" [(ngModel)] = "optionSelected">
 			      <label class="form-check-label" for="2">{{allQuestions[testId-1].op2}}</label>
 			      
 			  	</div>
 
 			  	<div class="form-check">
-			            <input id="3" type="radio" class="form-check-input" value="3" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='3'">
+			            <input id="3" type="radio" class="form-check-input" value="3" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='3'" [(ngModel)] = "optionSelected">
 			      <label class="form-check-label" for="3">{{allQuestions[testId-1].op3}}</label>
 			      </div>
 
 			      <div class="form-check">
-			            <input id="4" type="radio" class="form-check-input" value="4" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='4'">
+			            <input id="4" type="radio" class="form-check-input" value="4" name="opt" [(ngModel)] = "checkId" [checked] = "checkId=='4'" [(ngModel)] = "optionSelected">
 			      <label class="form-check-label" for="4">{{allQuestions[testId-1].op4}}</label>
 				   
 				  </div>
@@ -43,12 +42,13 @@
 	</div>
 
 	<div class="row" >
-		<div class="col-12 text-center  mt-5">
-		  <button type="submit" class="btn btn-success" (click)="nextEventHandler()">Next</button>
+		<div *ngIf = "!finish" class="col-12 text-center  mt-5">
+		  <button type="submit" class="btn btn-success" (click)="nextEventHandler()" [disabled]="!optionSelected">Next</button>
+		  </div>
+		  <div *ngIf = "finish && !showResult" class="col-12 text-center  mt-5">
+		  <button type="submit" class="btn btn-success" (click)="nextEventHandler()" [disabled]="!optionSelected">Submit</button>
 		  </div>
 	</div>
 
-	{{checkId}}
-	<!-- {{console.log(typeof(checkId))}} -->
 
 </div>

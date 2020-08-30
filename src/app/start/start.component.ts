@@ -10,8 +10,10 @@ import { Router } from "@angular/router";
 })
 export class StartComponent implements OnInit {
 	testId:number;
+  agreeMentChecked:boolean;
   constructor(public router:Router) {
   		this.testId = 1;
+      this.agreeMentChecked = false;
    }
 
   ngOnInit(): void {
@@ -20,5 +22,11 @@ export class StartComponent implements OnInit {
   startEventHandler(){
   	this.router.navigate(["/test",this.testId]);
   }
+
+  checkEventHandler(){
+    // this.agreeMentChecked = true;
+  }
+
+
 
 }

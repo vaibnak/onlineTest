@@ -16,7 +16,9 @@ export class TestpageComponent implements OnInit {
 	showResult:boolean;
 	showQuestion:boolean;
   checkId:string;
+  finish:boolean;
   manageQuestions:ManageQuestionsService;
+  optionSelected:boolean;
 
   constructor(public route:ActivatedRoute, private router:Router, public manageQuestionsTmp:ManageQuestionsService) {
   	console.log("constructor called");
@@ -26,6 +28,8 @@ export class TestpageComponent implements OnInit {
     this.totalScore = 0;
   	this.showResult = false;
   	this.showQuestion = true;
+    this.finish = false;
+    this.optionSelected = false;
    }
 
   ngOnInit(): void {
@@ -42,6 +46,10 @@ export class TestpageComponent implements OnInit {
     this.checkId = "0";
     this.manageQuestions.putUserAnswer(this.testId,val);
     this.testId++;
+    this.optionSelected = false;
+    if(this.testId == 10){
+      this.finish = true;
+    }
     if(this.testId>10){
       this.showResult = true;
       this.showQuestion = false;
@@ -55,8 +63,5 @@ export class TestpageComponent implements OnInit {
   templateForm(value: any) {
   	
   }
-
-
-
 
 }

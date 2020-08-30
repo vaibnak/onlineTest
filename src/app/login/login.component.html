@@ -18,20 +18,12 @@
 					<div class="form-group">
 						<label for="password">Password</label>
 						<input type="password" class="form-control" id="pwd" placeholder="password" formControlName="password">
-						<small id="passwordHelp" class="form-text text-muted">password should be min 4 and max 8 length</small>
+						
 					</div>
 
 
 						<div *ngIf="			loginForm.get('password').errors?.required && (loginForm.get('password').touched || loginForm.get('password').dirty)">
 							<p class="text-danger">password is required</p>
-						</div>
-
-						<div *ngIf="			loginForm.get('password').errors?.minlength && (loginForm.get('password').touched || loginForm.get('password').dirty)">
-							<p class="text-danger">password should be of min 4 length</p>
-						</div>
-
-						<div *ngIf="			loginForm.get('password').errors?.maxlength && (loginForm.get('password').touched || loginForm.get('password').dirty)">
-							<p class="text-danger">password should be of max 8 length</p>
 						</div>
 
 					<div class="checkbox">
